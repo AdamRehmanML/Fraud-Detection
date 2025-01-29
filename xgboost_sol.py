@@ -29,9 +29,9 @@ params = {
     'device': 'cpu',           
     'learning_rate': 0.05,          # Lower learning rate for better convergence
     'max_depth': 10,                 # Depth of trees to prevent overfitting
-    'n_estimators': 2000,           # Increase for better results, use early stopping
+    'n_estimators': 50000,           # Increase for better results, use early stopping
     'gamma': 10,                     # Minimum loss reduction to make a split
-    'lambda': 1,                    # L2 regularisation to prevent overfitting
+    'lambda': 10,                    # L2 regularisation to prevent overfitting
     'alpha': 1,                     # L1 regularisation for feature selection
     'scale_pos_weight': class_imbalance, 
     'eval_metric': 'auc'         # Scale to balance class weights
@@ -75,8 +75,6 @@ val_preds_fbeta = (val_probs >= best_fbeta_threshold).astype(int)
 confusion_f1 = confusion_matrix(y_val, val_preds_custom)
 confusion_fbeta = confusion_matrix(y_val, val_preds_fbeta)
 
-from matplotlib.widgets import Slider
-
 # plot confusion matrix
 fig, ax = plt.subplots(1, 2, figsize=(12, 6))
 sns.heatmap(confusion_f1, annot=True, fmt='d', cmap='Blues', ax=ax[0])
@@ -91,3 +89,4 @@ plt.tight_layout()
 plt.show()
 # Save the confusion matrix
 fig.savefig('confusion_matrix.png')
+
