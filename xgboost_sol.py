@@ -40,7 +40,6 @@ params = {
 model = xgb.XGBClassifier(**params)
 model.fit(X_train, y_train, eval_set=[(X_val, y_val)], verbose=False)
 model.save_model('xgboost_model.json')
-
 # Predict probabilities
 val_probs = model.predict_proba(X_val)[:, 1]
 
@@ -82,8 +81,8 @@ for beta in range(1, 21):
 
     # Save the plot (filename includes beta value)
     plt.savefig(f'F_beta_{beta}.jpg')
-    plt.close()  # Close the figure to free memory
+    #plt.close()  # Close the figure to free memory
 
     # Optional: Print results
     print(f"F_beta={beta}: Best threshold = {best_fbeta_threshold:.4f}, Score = {fbeta_scores[best_fbeta_index]:.4f}")
-print(os.listdir())
+
