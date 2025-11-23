@@ -6,7 +6,7 @@ This repository contains experiments and code for detecting financial fraud in c
 
 ### The Challenge of Imbalance
 
-The dataset presents a severe **class imbalance**, where legitimate transactions vastly outnumber fraudulent ones. This requires tuning both the model (using `scale_pos_weight` in XGBoost) and the final prediction threshold to prioritize **Recall**—minimizing **False Negatives** (missed fraud cases)—which is critical in a financial context where lost revenue from fraud is highly costly.
+The dataset presents a severe **class imbalance**, where legitimate transactions vastly outnumber fraudulent ones. This requires tuning both the model (using `scale_pos_weight` in XGBoost) and the final prediction threshold to prioritize **Recall**, minimizing **False Negatives** (missed fraud cases), which is critical in a financial context where lost revenue from fraud is highly costly.
 
 ## Modeling and Evaluation
 
