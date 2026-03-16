@@ -1,4 +1,4 @@
-# 💳 Fraud-Detection
+# Fraud-Detection
 
 This repository contains experiments and code for detecting financial fraud in credit card transactions using various machine learning methods. The primary dataset comes from [Kaggle's credit card fraud dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud).
 
